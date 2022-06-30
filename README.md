@@ -1,8 +1,19 @@
-# example
+# pdf-parse-example
 
 Clone the repository and install GROBID:
 ```
-$ git submodule update --init --recursive
+$ git clone --recurse-submodules git@github.com:hcss-utils/pdf-parse-example.git
+$ cd pdf-parse-example
+$ bash s2orc/scripts/setup_grobid.sh
+# 87% EXECUTING means it's ready to accept requests
+$ bash s2orc/scripts/run_grobid.sh 
+```
+
+If recurse-submodules isn't working, then try:
+```
+$ git clone https://github.com/hcss-utils/pdf-parse-example.git
+$ cd pdf-parse-example
+$ git clone https://github.com/allenai/s2orc-doc2json.git
 $ bash s2orc/scripts/setup_grobid.sh
 # 87% EXECUTING means it's ready to accept requests
 $ bash s2orc/scripts/run_grobid.sh 
@@ -16,7 +27,7 @@ $ pip install -r s2orc-doc2json/requirements.txt
 $ pip install -e s2orc-doc2json
 ```
 
-From within venv start run.sh:
+Put PDFs into ./assets/raw folder and from within venv start run.sh:
 ```
 $ bash run.sh
 ```
